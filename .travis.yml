@@ -1,0 +1,16 @@
+language: java
+jdk:
+        - openjdk8
+
+cash: mvnw
+install:
+        - mvnw install
+script:
+        - mvnw test
+        - mvnw run build
+
+deploy:
+        provider: pages
+        github-token: $GITHUB_TOKEN
+        on:
+                branch: release_all
